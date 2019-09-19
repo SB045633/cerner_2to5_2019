@@ -1,5 +1,5 @@
-# Outputs string then requests 5 input characters to add to the output
+# Outputs string then requests 10 input characters to add to the output (can include spaces)
 
 -[----->+<]>-.---[->++<]>.[->++++++<]>+.--[--->++<]>--.+[->++<]>+.+[--->+<]>+++.-----------.+++++.+++++.-------.
 -[--->+<]>--.+[->++<]>+.+[-->+++<]>++.-------.+++++++++++..-------.+++++++++.-------.--.+++[->+++<]>++.[-->+<]>+++.
->+++++[>,.<-]
+>++++++++++[>,.<-]
