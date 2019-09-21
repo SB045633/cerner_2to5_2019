@@ -3,7 +3,7 @@
 
 $news = Invoke-RestMethod -uri "https://news.google.com/rss/search?um=1&q=cerner&hl=en-US&gl=US&ceid=US:en"
 $news = $news | ForEach-Object {Add-Member -InputObject $_ -MemberType NoteProperty -Name "NewPubDate" -Value (Get-date $_.pubdate) -Passthru; Add-Member -InputObject $_ -MemberType NoteProperty -Name "HTMLLink" -Value "<a href='$($_.Link)'>Article Link</a>"}
-$news = ($news | Select-Object NewPubDate,Title,HTMLLink | Sort-Object PubDateMod -Descending | ConvertTo-Html -Fragment) -replace "title","Title" -replace "NewPubDate","Date" -replace "HTMLLink","Link"
+$news = ($news | Select-Object NewPubDate,Title,HTMLLink | Sort-Object NewPubDate -Descending | ConvertTo-Html -Fragment) -replace "title","Title" -replace "NewPubDate","Date" -replace "HTMLLink","Link"
 
 $header = @"
 <style>
@@ -22,5 +22,7 @@ $($news)
 "@
 
 $htmlOut = ConvertTo-Html -Head $header -Body $body
+
+Add-Type -AssemblyName System.Web
 [System.Web.HttpUtility]::HtmlDecode($htmlOut) | Set-Content $report
 Invoke-Item $report
