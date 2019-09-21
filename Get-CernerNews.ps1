@@ -13,7 +13,6 @@ $header = @"
 </style>
 "@
 
-$date = Get-Date -UFormat "%m%d%Y"
 $report = "$($env:TEMP)\CernerNewsFeed.html"
 $body = @"
 <title>Cerner News</title>
