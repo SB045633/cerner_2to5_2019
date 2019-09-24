@@ -1,8 +1,10 @@
+# cerner_2^5_2019
+# Creates a graph comparing the annual returns of the S&P 500 with YOY inflation rates
+
 import matplotlib.pyplot as plt
 import numpy as np
 
 years = (list(range(1970,2019)))
-years = np.array(years)
 
 spRate = np.array([0.10,10.79,15.63,-17.37,-29.72,31.55,19.15,-11.50,1.06,12.31,25.77,-9.73,14.76,17.27,1.40,26.33,14.62,2.03,12.40,27.25,-6.56,26.31,4.46,7.06,
 -1.54,34.11,20.26,31.01,26.67,19.53,-10.14,-13.04,-23.37,26.38,8.99,3.00,13.62,3.53,-38.49,23.45,12.78,0.00,13.41,29.60,11.39,-0.73,9.54,19.42,-6.24])
